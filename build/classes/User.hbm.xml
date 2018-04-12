@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="kz.proffix4.hibernate">
+    <class name="User" table="users">
+        <id name="id" column="id" unsaved-value="null">
+            <generator class="native"/>
+        </id>
+
+	<many-to-one name="userRole" column="userRoleID" class="UserRole" cascade="all"/>
+        <property name="login" column="login"/>
+        <property name="password" column="password"/>
+        <property name="description" column="description"/>
+        <property name="note" column="note"/>
+        <property name="availableDepartments" column="availableDepartments"/>
+    </class>
+</hibernate-mapping>
