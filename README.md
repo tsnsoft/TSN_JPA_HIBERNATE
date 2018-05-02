@@ -3,6 +3,9 @@
 
 ![screenshot](screenshot.png)
 
+
+Скрипт для создания таблиц:
+
 ```
 CREATE TABLE IF NOT EXISTS `tsn_demo`.`users` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
