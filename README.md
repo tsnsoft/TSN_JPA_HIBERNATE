@@ -4,7 +4,7 @@
 ![screenshot](screenshot.png)
 
 
-Скрипт для создания таблиц:
+Скрипты для создания таблиц:
 
 ```
 CREATE TABLE IF NOT EXISTS `tsn_demo`.`users` (
