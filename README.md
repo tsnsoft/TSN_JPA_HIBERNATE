@@ -17,9 +17,6 @@ CREATE TABLE IF NOT EXISTS `tsn_demo`.`users` (
   `availableDepartments` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `FK_5u2kg39886myytwutp0dnxa6d` (`userRoleID` ASC),
-  CONSTRAINT `FK_5u2kg39886myytwutp0dnxa6d`
-    FOREIGN KEY (`userRoleID`)
-    REFERENCES `tsn_demo`.`userrole` (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 14
 DEFAULT CHARACTER SET = latin1
