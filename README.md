@@ -7,6 +7,10 @@
 Скрипты для создания таблиц:
 
 ```
+CREATE DATABASE IF NOT EXISTS `tsn_demo` CHARACTER SET = latin1
+```
+
+```
 CREATE TABLE IF NOT EXISTS `tsn_demo`.`users` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `userRoleID` INT(11) NULL DEFAULT '0',
@@ -16,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `tsn_demo`.`users` (
   `note` VARCHAR(45) NULL DEFAULT NULL,
   `availableDepartments` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `FK_5u2kg39886myytwutp0dnxa6d` (`userRoleID` ASC),
+  INDEX `FK_5u2kg39886myytwutp0dnxa6d` (`userRoleID` ASC))
 ENGINE = InnoDB
 AUTO_INCREMENT = 14
 DEFAULT CHARACTER SET = latin1
