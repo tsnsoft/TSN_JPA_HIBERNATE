@@ -45,7 +45,7 @@ jdbc:mysql://localhost:3306/tsn_demo?useUnicode=true&useJDBCCompliantTimezoneShi
 ```
 
 ```
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tsn_demo?&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
+<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tsn_demo?&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
 ```
 
-*Кроме этого, нужно в MySQL Workbench завести нужного пользователя с правами и паролем без шифрования!*
+**Кроме этого, нужно в MySQL Workbench завести нужного пользователя с правами и паролем без шифрования!**
