@@ -35,4 +35,15 @@ CREATE TABLE IF NOT EXISTS `tsn_demo`.`userrole` (
 ENGINE = InnoDB
 AUTO_INCREMENT = 28
 DEFAULT CHARACTER SET = latin1
+
+```
+
+Для новой версии MySQL 8 нужно использовать новую библиотеку из папки lib и сделать следующие изменения:
+
+```
+jdbc:mysql://localhost:3306/tsn_demo?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+```
+
+```
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tsn_demo?&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
 ```

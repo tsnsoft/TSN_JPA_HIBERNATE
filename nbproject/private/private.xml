@@ -2,6 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/Development/NetBeansProjects/TSN_JPA_HIBERNATE/src/kz/proffix4/hibernate/TSN_HIBERNATE.java</file>
+            <file>file:/D:/Development/NetBeansProjects/TSN_JPA_HIBERNATE/src/User.hbm.xml</file>
+            <file>file:/D:/Development/NetBeansProjects/TSN_JPA_HIBERNATE/src/hibernate.cfg.xml</file>
+        </group>
     </open-files>
 </project-private>
