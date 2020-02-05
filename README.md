@@ -23,10 +23,8 @@ CREATE TABLE IF NOT EXISTS `tsn_demo`.`users` (
   INDEX `FK_5u2kg39886myytwutp0dnxa6d` (`userRoleID` ASC))
 ENGINE = InnoDB
 AUTO_INCREMENT = 14
-DEFAULT CHARACTER SET = latin1
-```
+DEFAULT CHARACTER SET = latin1;
 
-```
 CREATE TABLE IF NOT EXISTS `tsn_demo`.`userrole` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL DEFAULT NULL,
