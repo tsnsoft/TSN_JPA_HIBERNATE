@@ -7,10 +7,8 @@
 Скрипты для создания таблиц:
 
 ```
-CREATE DATABASE IF NOT EXISTS `tsn_demo` CHARACTER SET = latin1
-```
+CREATE DATABASE IF NOT EXISTS `tsn_demo` CHARACTER SET = latin1;
 
-```
 CREATE TABLE IF NOT EXISTS `tsn_demo`.`users` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `userRoleID` INT(11) NULL DEFAULT '0',
