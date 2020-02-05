@@ -31,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `tsn_demo`.`userrole` (
 ENGINE = InnoDB
 AUTO_INCREMENT = 28
 DEFAULT CHARACTER SET = latin1
-
 ```
 
 Для новой версии MySQL 8.0 нужно использовать новую библиотеку из папки lib и сделать следующие изменения:
