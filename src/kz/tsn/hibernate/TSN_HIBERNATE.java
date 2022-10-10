@@ -8,15 +8,19 @@ public class TSN_HIBERNATE {
     public static void main(String[] args) {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
+        UserRole userRole1 = new UserRole();
+        userRole1.setName("Boss12");
+        userRole1.setAccessCodes("736");
+        session.save(userRole1);
+
         UserRole userRole = new UserRole();
-        userRole.setName("R114");
-        userRole.setAccessCodes("1,2,5");
+        userRole.setName("TSN");
+        userRole.setAccessCodes("112144,736");
         session.save(userRole);
-        userRole = (UserRole) session.get(UserRole.class, userRole.getId());
-        userRole.setAccessCodes("2");
-        session.save(userRole);
-       
-        session.delete(userRole);
+
+        org.hibernate.Transaction tr = session.beginTransaction();
+        session.delete(userRole1);
+        tr.commit();
 
         List<UserRole> list = (List<UserRole>) session.createCriteria(UserRole.class).list();
 //	    List<UserRole> list=(List<UserRole>)session.createSQLQuery("select * from UserRole").addEntity(UserRole.class).list();
@@ -24,7 +28,7 @@ public class TSN_HIBERNATE {
         for (UserRole role : list) {
             System.out.println(role);
         }
-       
+
         User user = new User();
         user.setAvailableDepartments("1,2,3,4");
         user.setDescription("Test12");
@@ -32,10 +36,11 @@ public class TSN_HIBERNATE {
         user.setPassword("1234");
         user.setUserRole(new UserRole("hibernate2", "7,7,7"));
         session.save(user);
+        
         user = (User) session.get(User.class, user.getId());
         user.setAvailableDepartments("777");
         session.save(user);
-        //   session.delete(user);
+        
         List<User> list2 = (List<User>) session
                 .createCriteria(User.class)
                 //  .addOrder(Order.asc("login"))
@@ -46,8 +51,9 @@ public class TSN_HIBERNATE {
         list2.forEach((item) -> {
             System.out.println(item);
         });
+        
         session.close();
 
-    System.exit (0);
+        System.exit(0);
     }
 }
