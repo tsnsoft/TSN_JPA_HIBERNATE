@@ -32,4 +32,4 @@ AUTO_INCREMENT = 28
 DEFAULT CHARACTER SET = latin1
 ```
 
-![screenshot](Связи между таблицами БД и классами в Hibernate.png)
+![screenshot](screenshot2.png)
