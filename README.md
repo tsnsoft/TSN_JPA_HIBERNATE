@@ -35,3 +35,5 @@ DEFAULT CHARACTER SET = latin1
 ![screenshot](screenshot2.png)
 
 ![screenshot](screenshot3.png)
+
+https://www.baeldung.com/hibernate-criteria-queries

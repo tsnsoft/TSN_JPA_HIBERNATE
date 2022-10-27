@@ -3,6 +3,7 @@ package kz.tsn.hibernate;
 import java.util.List;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 
 public class TSN_HIBERNATE {
@@ -11,14 +12,17 @@ public class TSN_HIBERNATE {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         
-        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaBuilder cb = session.getCriteriaBuilder();
         
-        CriteriaQuery<UserRole> criteriaUserRole = builder.createQuery(UserRole.class);
-        criteriaUserRole.select(criteriaUserRole.from(UserRole.class));
+        CriteriaQuery<UserRole> criteriaUserRole = cb.createQuery(UserRole.class);
+        Root<UserRole> rootUserRole = criteriaUserRole.from(UserRole.class);
+        criteriaUserRole.select(rootUserRole).where(cb.like(rootUserRole.get("name"), "%2%")).
+                where(cb.like(rootUserRole.get("accessCodes"), "%,7"));
         
-        CriteriaQuery<User> criteriaUser = builder.createQuery(User.class);
-        criteriaUser.select(criteriaUser.from(User.class));
-        
+        CriteriaQuery<User> criteriaUser = cb.createQuery(User.class);
+        Root<User> rootUser = criteriaUser.from(User.class);
+        criteriaUser.select(rootUser).where(cb.like(rootUser.get("login"), "%12%"));
+       
         UserRole userRole1 = new UserRole();
         userRole1.setName("R114");
         userRole1.setAccessCodes("125");
