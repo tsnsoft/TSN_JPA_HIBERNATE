@@ -1,33 +1,38 @@
 package kz.tsn.hibernate;
 
 import java.util.List;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.CriteriaBuilder;
 import org.hibernate.Session;
 
 public class TSN_HIBERNATE {
 
     public static void main(String[] args) {
+        
         Session session = HibernateUtil.getSessionFactory().openSession();
-
+        
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        
+        CriteriaQuery<UserRole> criteriaUserRole = builder.createQuery(UserRole.class);
+        criteriaUserRole.select(criteriaUserRole.from(UserRole.class));
+        
+        CriteriaQuery<User> criteriaUser = builder.createQuery(User.class);
+        criteriaUser.select(criteriaUser.from(User.class));
+        
         UserRole userRole1 = new UserRole();
-        userRole1.setName("Boss12");
-        userRole1.setAccessCodes("736");
+        userRole1.setName("R114");
+        userRole1.setAccessCodes("125");
         session.save(userRole1);
 
-        UserRole userRole = new UserRole();
-        userRole.setName("TSN");
-        userRole.setAccessCodes("112144,736");
-        session.save(userRole);
+        UserRole userRole2 = new UserRole();
+        userRole2.setName("lsadkjghl");
+        userRole2.setAccessCodes("45859,2367658");
+        session.save(userRole2);
 
         org.hibernate.Transaction tr = session.beginTransaction();
         session.delete(userRole1);
+//        session.delete(userRole2);
         tr.commit();
-
-        List<UserRole> list = (List<UserRole>) session.createCriteria(UserRole.class).list();
-//	    List<UserRole> list=(List<UserRole>)session.createSQLQuery("select * from UserRole").addEntity(UserRole.class).list();
-//        List<UserRole> list = (List<UserRole>) session.createQuery("from UserRole where id in (7,10,48)").list();
-        for (UserRole role : list) {
-            System.out.println(role);
-        }
 
         User user = new User();
         user.setAvailableDepartments("1,2,3,4");
@@ -41,14 +46,13 @@ public class TSN_HIBERNATE {
         user.setAvailableDepartments("777");
         session.save(user);
         
-        List<User> list2 = (List<User>) session
-                .createCriteria(User.class)
-                //  .addOrder(Order.asc("login"))
-                // .createCriteria("userRole")
-                //.add(Expression.like("name", "%"))
-                //.addOrder(Order.asc("name"))
-                .list();
-        list2.forEach((item) -> {
+        List<User> resultsUser = session.createQuery(criteriaUser).getResultList();
+        resultsUser.forEach((item) -> {
+            System.out.println(item);
+        });
+
+        List<UserRole> resultsUserRole = session.createQuery(criteriaUserRole).getResultList();
+        resultsUserRole.forEach((item) -> {
             System.out.println(item);
         });
         
@@ -56,4 +60,5 @@ public class TSN_HIBERNATE {
 
         System.exit(0);
     }
+    
 }

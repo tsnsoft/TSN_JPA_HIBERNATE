@@ -1,4 +1,4 @@
-# TSN_JPA_HIBERNATE
+﻿# TSN_JPA_HIBERNATE
 Пример использования технологии JPA HIBERNATE в Java для NetBeans
 
 ![screenshot](screenshot.png)
@@ -33,3 +33,5 @@ DEFAULT CHARACTER SET = latin1
 ```
 
 ![screenshot](screenshot2.png)
+
+![screenshot](screenshot3.png)
